@@ -1,6 +1,8 @@
 import { createApp, Vue } from "https://mavue.mavo.io/mavue.js";
 
 let app = createApp({
+	
+	
 	data: {
 		tasks: [
 			{
@@ -26,7 +28,9 @@ let app = createApp({
 		clearCompleted () {
 			this.tasks = this.tasks.filter(task => !task.done);
 		},
-
+		setCheck(i){
+			this.tasks[i].done = !this.tasks[i].done
+		},
 		setActive(i) {
 			for (let task of this.tasks) {
 				task.active = false;
